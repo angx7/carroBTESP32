@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ControlRemotoBT.MainPage"
+             BackgroundColor="#121212"
+             NavigationPage.HasNavigationBar="False">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30,60" Spacing="30">
+
+            <!-- Estado de conexión -->
+            <Label x:Name="lblEstatus"
+                   Text="Desconectado"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="White" />
+
+            <!-- Botón Conectar -->
+            <Button x:Name="btnConectar"
+                    Text="🔌 Conectar"
+                    FontSize="18"
+                    BackgroundColor="#2196F3"
+                    TextColor="White"
+                    CornerRadius="12"
+                    Padding="16,10"
+                    HorizontalOptions="Fill"
+                    Clicked="OnConnectivityClicked"/>
+
+            <!-- Controles del carro -->
+            <Frame CornerRadius="16"
+                   Padding="20"
+                   BackgroundColor="#1E1E1E"
+                   HasShadow="True"
+                   IsEnabled="False"
+                   x:Name="gridControles">
+
+                <Grid ColumnDefinitions="*,*,*"
+                      RowDefinitions="Auto,Auto,Auto"
+                      ColumnSpacing="15"
+                      RowSpacing="15">
+
+                    <!-- Fila 1 -->
+                    <Button Text="↑"
+                            FontSize="24"
+                            Grid.Row="0" Grid.Column="1"
+                            BackgroundColor="#4CAF50"
+                            TextColor="White"
+                            CornerRadius="8"
+                            Clicked="OnMoveForwardClicked" />
+
+                    <!-- Fila 2 -->
+                    <Button Text="←"
+                            FontSize="24"
+                            Grid.Row="1" Grid.Column="0"
+                            BackgroundColor="#FFC107"
+                            TextColor="Black"
+                            CornerRadius="8"
+                            Clicked="OnTurnLeftClicked" />
+
+                    <Button Text="⏹"
+                            FontSize="24"
+                            Grid.Row="1" Grid.Column="1"
+                            BackgroundColor="#F44336"
+                            TextColor="White"
+                            CornerRadius="8"
+                            Clicked="OnStopClicked" />
+
+                    <Button Text="→"
+                            FontSize="24"
+                            Grid.Row="1" Grid.Column="2"
+                            BackgroundColor="#FFC107"
+                            TextColor="Black"
+                            CornerRadius="8"
+                            Clicked="OnTurnRightClicked" />
+
+                    <!-- Fila 3 -->
+                    <Button Text="↓"
+                            FontSize="24"
+                            Grid.Row="2" Grid.Column="1"
+                            BackgroundColor="#4CAF50"
+                            TextColor="White"
+                            CornerRadius="8"
+                            Clicked="OnMoveBackwardClicked" />
+                </Grid>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
